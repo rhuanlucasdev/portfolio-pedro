@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useWindows } from "../context/WindowContext.jsx";
 
-const prompt = "C:\\Users\\Rhuan\\portfolio>";
+const prompt = "C:\\Users\\Pedro\\portfolio>";
 
 const openTargets = {
   explorer: "explorer",
@@ -21,36 +21,42 @@ const commandOutput = {
     "Comandos disponíveis:",
     "  about       Mostra um resumo sobre mim",
     "  skills      Lista a stack técnica",
-    "  projects    Lista projetos em destaque",
+    "  projects    Lista projetos publicados no GitHub",
     "  contact     Mostra canais de contato",
     "  resume      Abre um resumo do currículo",
     "  open <app>   Abre uma janela (ex: open projects)",
     "  cls/clear   Limpa o terminal",
   ],
   about: [
-    "Rhuan Lucas - Frontend Developer",
-    "Crio interfaces modernas, responsivas e focadas em experiência.",
+    "Pedro Lucas de Martino - Frontend Developer",
+    "Crio interfaces modernas, responsivas e otimizadas para experiência do usuário.",
+    "Foco em ReactJS, TypeScript, JavaScript, TailwindCSS e Next.js.",
     "Este portfólio simula um ambiente Windows 10 com apps, janelas e taskbar.",
   ],
   skills: [
-    "Frontend: React, Next.js, TypeScript, TailwindCSS, HTML5, CSS3",
-    "Backend: Node.js, Express, REST APIs, MongoDB",
-    "Ferramentas: Git, GitHub, Figma, Vite, Vercel",
+    "Linguagens e frameworks: JavaScript, TypeScript, ReactJS, Next.js, HTML5, CSS3",
+    "Estilização: TailwindCSS, UX/UI, Design Responsivo",
+    "Boas práticas: Clean Code, Componentização, Reutilização de Componentes, Integração com APIs",
+    "Backend: noções de Node.js, .NET e C#",
+    "Complementares: melhoria contínua, análise de risco, prevenção de perdas e resolução de problemas",
   ],
   projects: [
-    "1. Aether Commerce   - E-commerce premium em React/Next/Tailwind",
-    "2. FitPlan           - Gerador de treino e dieta com exportação PDF",
-    "3. Hydro Dashboard   - Dashboard de indicadores e inspeções",
+    "1. dnd-character-generator",
+    "   Repositório: https://github.com/Lyguinees/dnd-character-generator",
+    "   Status: disponível no GitHub, sem deploy em produção.",
   ],
   contact: [
-    "Email: seuemail@email.com",
-    "LinkedIn: /in/seuusuario",
-    "GitHub: @seuusuario",
+    "Email: lyguines@gmail.com",
+    "LinkedIn: https://www.linkedin.com/in/pedrolucasmartino/",
+    "GitHub: https://github.com/Lyguinees",
+    "WhatsApp: +55 35 98479-0919",
   ],
   resume: [
-    "Frontend Developer",
-    "Foco: React, TypeScript, TailwindCSS, componentização e UI responsiva.",
-    "Abra curriculo.pdf no desktop para ver o preview completo.",
+    "Frontend Developer Júnior / Estagiário",
+    "Foco: ReactJS, TypeScript, Next.js, TailwindCSS, Clean Code e UI responsiva.",
+    "Almoxarife na Aptiv desde agosto de 2025.",
+    "ADS no Centro Universitário Una: junho/2024 a dezembro/2026.",
+    "Abra curriculo.pdf no desktop para ver o preview e baixar o PDF.",
   ],
 };
 

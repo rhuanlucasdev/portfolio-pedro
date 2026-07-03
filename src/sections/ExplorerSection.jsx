@@ -294,7 +294,7 @@ export default function ExplorerSection() {
                 <dt className="text-slate-500">Tipo:</dt>
                 <dd>{propertiesItem.type}</dd>
                 <dt className="text-slate-500">Local:</dt>
-                <dd>C:\Users\Rhuan\portfolio</dd>
+                <dd>C:\Users\Pedro\portfolio</dd>
                 <dt className="text-slate-500">Modificado:</dt>
                 <dd>{propertiesItem.modified}</dd>
                 <dt className="text-slate-500">Atributos:</dt>

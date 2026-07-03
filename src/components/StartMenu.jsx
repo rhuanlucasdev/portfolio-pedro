@@ -105,7 +105,7 @@ export default function StartMenu({ onClose, onPowerAction }) {
         </div>
 
         <div className="mt-5 border-t border-[#333333] pt-4 text-xs text-white/60">
-          Rhuan Lucas · Frontend Developer
+          Pedro Lucas de Martino · Frontend Developer
         </div>
       </div>
 

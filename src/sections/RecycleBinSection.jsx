@@ -3,7 +3,7 @@ import { HiDocumentText, HiTrash } from "react-icons/hi";
 const deletedItems = [
   {
     name: "layout-ruim-final-final.zip",
-    original: "C:\\Users\\Rhuan\\Desktop",
+    original: "C:\\Users\\Pedro\\Desktop",
     removed: "03/07/2026 09:41",
   },
   {

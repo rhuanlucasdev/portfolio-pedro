@@ -1,30 +1,14 @@
 import { FaGithub } from "react-icons/fa6";
-import { HiExternalLink, HiFolder } from "react-icons/hi";
+import { HiFolder } from "react-icons/hi";
 
 const projects = [
   {
-    name: "Aether Commerce",
-    stack: "React, Next.js, TailwindCSS",
-    status: "Publicado",
+    name: "dnd-character-generator",
+    stack: "Frontend / JavaScript",
+    status: "GitHub",
     description:
-      "E-commerce premium fictício com foco em experiência visual, catálogo e páginas de produto.",
-    link: "#",
-  },
-  {
-    name: "FitPlan",
-    stack: "React, TypeScript, jsPDF",
-    status: "Em evolução",
-    description:
-      "Gerador de planos de treino e dieta com tabelas dinâmicas e exportação para PDF.",
-    link: "#",
-  },
-  {
-    name: "Hydro Dashboard",
-    stack: "React, Charts, REST API",
-    status: "Protótipo",
-    description:
-      "Dashboard para monitoramento de indicadores, níveis de água e histórico de inspeções.",
-    link: "#",
+      "Gerador de personagens de Dungeons & Dragons publicado como repositório no GitHub. O projeto ainda não possui versão em produção.",
+    repository: "https://github.com/Lyguinees/dnd-character-generator",
   },
 ];
 
@@ -68,18 +52,16 @@ export default function ProjectsSection() {
                 <div className="mt-2 flex gap-2">
                   <a
                     className="inline-flex items-center gap-1 bg-[#0078d7] px-3 py-1.5 font-semibold text-white hover:bg-[#006cc1]"
-                    href={project.link}
-                  >
-                    <HiExternalLink size={15} />
-                    Ver projeto
-                  </a>
-                  <a
-                    className="inline-flex items-center gap-1 border border-slate-300 bg-white px-3 py-1.5 font-semibold text-slate-700 hover:bg-slate-100"
-                    href={project.link}
+                    href={project.repository}
+                    target="_blank"
+                    rel="noreferrer"
                   >
                     <FaGithub size={14} />
-                    GitHub
+                    Abrir GitHub
                   </a>
+                  <span className="inline-flex items-center border border-slate-300 bg-[#f7f7f7] px-3 py-1.5 font-semibold text-slate-500">
+                    Sem deploy
+                  </span>
                 </div>
               </div>
             </article>

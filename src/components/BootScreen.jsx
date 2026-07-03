@@ -65,7 +65,7 @@ export default function BootScreen({ onEnter }) {
             </div>
 
             <h1 className="mt-5 text-3xl font-normal text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.55)]">
-              Rhuan Lucas
+              Pedro Lucas de Martino
             </h1>
 
             <button

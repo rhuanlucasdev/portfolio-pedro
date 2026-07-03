@@ -11,8 +11,8 @@ import { useWindows } from "../context/WindowContext.jsx";
 
 const notifications = [
   {
-    title: "Novo projeto publicado",
-    body: "Aether Commerce foi adicionado aos projetos em destaque.",
+    title: "Projeto no GitHub",
+    body: "dnd-character-generator está disponível no repositório do Pedro.",
     time: "Agora",
   },
   {

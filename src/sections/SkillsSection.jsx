@@ -1,35 +1,31 @@
 import {
   FaCss3Alt,
-  FaFigma,
   FaGitAlt,
   FaHtml5,
   FaNodeJs,
   FaReact,
 } from "react-icons/fa6";
 import {
-  SiExpress,
-  SiMongodb,
   SiNextdotjs,
   SiTailwindcss,
   SiTypescript,
-  SiVercel,
-  SiVite,
 } from "react-icons/si";
 
 const skills = [
-  ["React", "Frontend", "Avançado", FaReact],
-  ["Next.js", "Frontend", "Intermediário", SiNextdotjs],
-  ["TypeScript", "Linguagem", "Intermediário", SiTypescript],
-  ["TailwindCSS", "UI", "Avançado", SiTailwindcss],
-  ["HTML5", "Base Web", "Avançado", FaHtml5],
-  ["CSS3", "Base Web", "Avançado", FaCss3Alt],
-  ["Node.js", "Backend", "Intermediário", FaNodeJs],
-  ["Express", "Backend", "Intermediário", SiExpress],
-  ["MongoDB", "Dados", "Intermediário", SiMongodb],
-  ["Git", "Ferramenta", "Avançado", FaGitAlt],
-  ["Figma", "Design", "Intermediário", FaFigma],
-  ["Vite", "Build", "Avançado", SiVite],
-  ["Vercel", "Deploy", "Intermediário", SiVercel],
+  ["JavaScript", "Linguagem", "Frontend", FaReact],
+  ["TypeScript", "Linguagem", "Frontend", SiTypescript],
+  ["ReactJS", "Framework", "Frontend", FaReact],
+  ["Next.js", "Framework", "Frontend", SiNextdotjs],
+  ["HTML5", "Base Web", "Frontend", FaHtml5],
+  ["CSS3", "Base Web", "Frontend", FaCss3Alt],
+  ["TailwindCSS", "Estilização", "UI responsiva", SiTailwindcss],
+  ["UX/UI", "Design", "Familiaridade", FaReact],
+  ["Clean Code", "Boas práticas", "Código limpo", FaGitAlt],
+  ["Componentização", "Arquitetura", "Reutilização", FaReact],
+  ["Integração com APIs", "Frontend", "Consumo de dados", FaGitAlt],
+  ["Node.js", "Backend", "Noções", FaNodeJs],
+  [".NET / C#", "Backend", "Noções", FaGitAlt],
+  ["Português", "Idioma", "Nativo", FaGitAlt],
 ];
 
 export default function SkillsSection() {
@@ -42,7 +38,7 @@ export default function SkillsSection() {
 
       <main className="p-4">
         <div className="mb-4 border border-slate-300 bg-[#f7f7f7] p-3 text-xs text-slate-700">
-          Stack técnica instalada neste ambiente de desenvolvimento.
+          Competências técnicas e complementares extraídas do currículo.
         </div>
 
         <div className="border border-slate-300 bg-white">

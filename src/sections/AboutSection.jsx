@@ -1,9 +1,9 @@
 const details = [
-  ["Nome", "Rhuan Lucas"],
-  ["Localização", "Brasil"],
-  ["Função", "Frontend Developer"],
-  ["Foco", "React / Next.js"],
-  ["Disponibilidade", "Projetos e oportunidades"],
+  ["Nome", "Pedro Lucas de Martino"],
+  ["Localização", "Paraisópolis, Minas Gerais, Brasil"],
+  ["Função", "Frontend Developer Júnior / Estagiário"],
+  ["Foco", "ReactJS / TypeScript / Next.js"],
+  ["Formação", "ADS - Centro Universitário Una"],
 ];
 
 export default function AboutSection() {
@@ -17,9 +17,9 @@ export default function AboutSection() {
       <div className="grid gap-4 p-4 md:grid-cols-[170px_1fr]">
         <aside className="border border-slate-300 bg-[#f7f7f7] p-4 text-center">
           <div className="mx-auto grid h-24 w-24 place-items-center rounded-full bg-[#7a8794] text-3xl font-semibold text-white">
-            RL
+            PM
           </div>
-          <h2 className="mt-3 font-semibold">Rhuan Lucas</h2>
+          <h2 className="mt-3 font-semibold">Pedro Lucas de Martino</h2>
           <p className="text-xs text-slate-600">Conta local</p>
         </aside>
 
@@ -29,10 +29,19 @@ export default function AboutSection() {
               Informações do perfil
             </div>
             <p className="p-3 leading-relaxed text-slate-700">
-              Desenvolvedor Frontend focado em criar interfaces modernas,
-              responsivas e bem estruturadas. Tenho interesse em produtos
-              digitais, experiências criativas e aplicações com identidade
-              visual forte.
+              Desenvolvedor Frontend com foco em ReactJS, TypeScript,
+              JavaScript e TailwindCSS, criando interfaces modernas,
+              responsivas e otimizadas para melhor experiência do usuário.
+              Possui experiência prática no desenvolvimento de componentes
+              reutilizáveis, integração com APIs e aplicação de boas práticas de
+              Clean Code.
+            </p>
+            <p className="border-t border-slate-100 p-3 leading-relaxed text-slate-700">
+              Tem familiaridade com UX/UI, Next.js e noções de backend com
+              Node.js, .NET e C#. Atualmente cursa Análise e Desenvolvimento de
+              Sistemas no Centro Universitário Una, com previsão de conclusão
+              em dezembro de 2026. Seu histórico em processos operacionais
+              agrega disciplina, atenção a detalhes e foco em melhoria contínua.
             </p>
           </section>
 

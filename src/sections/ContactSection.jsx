@@ -1,9 +1,35 @@
-import { FaGithub, FaLinkedin, FaRegEnvelope } from "react-icons/fa6";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaRegEnvelope,
+  FaWhatsapp,
+} from "react-icons/fa6";
 
 const links = [
-  { icon: FaRegEnvelope, label: "Email", value: "seuemail@email.com" },
-  { icon: FaLinkedin, label: "LinkedIn", value: "/in/seuusuario" },
-  { icon: FaGithub, label: "GitHub", value: "@seuusuario" },
+  {
+    icon: FaRegEnvelope,
+    label: "Email",
+    value: "lyguines@gmail.com",
+    href: "mailto:lyguines@gmail.com",
+  },
+  {
+    icon: FaLinkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/pedrolucasmartino",
+    href: "https://www.linkedin.com/in/pedrolucasmartino/",
+  },
+  {
+    icon: FaGithub,
+    label: "GitHub",
+    value: "github.com/Lyguinees",
+    href: "https://github.com/Lyguinees",
+  },
+  {
+    icon: FaWhatsapp,
+    label: "WhatsApp",
+    value: "+55 35 98479-0919",
+    href: "https://wa.me/5535984790919",
+  },
 ];
 
 export default function ContactSection() {
@@ -26,7 +52,9 @@ export default function ContactSection() {
                 <a
                   key={item.label}
                   className="grid grid-cols-[34px_90px_1fr] items-center px-3 py-3 text-sm hover:bg-[#e5f3ff]"
-                  href="#"
+                  href={item.href}
+                  target={item.href.startsWith("http") ? "_blank" : undefined}
+                  rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                 >
                   <Icon className="text-[#0078d7]" size={18} />
                   <span className="font-semibold">{item.label}</span>
@@ -37,40 +65,31 @@ export default function ContactSection() {
           </div>
         </section>
 
-        <form className="border border-slate-300 bg-white">
+        <section className="border border-slate-300 bg-white">
           <div className="border-b border-slate-200 bg-[#f7f7f7] px-3 py-2 font-semibold">
-            Nova mensagem
+            Disponível para contato
           </div>
-          <div className="grid gap-3 p-3">
-            <label className="grid gap-1 text-xs font-semibold text-slate-700">
-              Seu nome
-              <input
-                className="h-9 border border-slate-300 bg-white px-2 text-sm font-normal outline-none focus:border-[#0078d7]"
-                placeholder="Nome"
-              />
-            </label>
-            <label className="grid gap-1 text-xs font-semibold text-slate-700">
-              Seu email
-              <input
-                className="h-9 border border-slate-300 bg-white px-2 text-sm font-normal outline-none focus:border-[#0078d7]"
-                placeholder="email@exemplo.com"
-              />
-            </label>
-            <label className="grid gap-1 text-xs font-semibold text-slate-700">
-              Mensagem
-              <textarea
-                className="min-h-28 border border-slate-300 bg-white px-2 py-2 text-sm font-normal outline-none focus:border-[#0078d7]"
-                placeholder="Digite sua mensagem"
-              />
-            </label>
-            <button
+          <div className="grid gap-4 p-4">
+            <p className="leading-relaxed text-slate-700">
+              Pedro busca oportunidades como Frontend Developer Júnior ou
+              Estagiário, com foco em ReactJS, TypeScript, Next.js e
+              TailwindCSS.
+            </p>
+            <div className="grid gap-2 text-xs text-slate-600">
+              <p>
+                Prefira contato por email, LinkedIn ou WhatsApp para propostas,
+                networking e conversas sobre projetos.
+              </p>
+              <p>Os links ao lado abrem diretamente os canais oficiais.</p>
+            </div>
+            <a
               className="w-fit bg-[#0078d7] px-5 py-2 text-sm font-semibold text-white hover:bg-[#006cc1]"
-              type="button"
+              href="mailto:lyguines@gmail.com"
             >
-              Enviar mensagem
-            </button>
+              Enviar email
+            </a>
           </div>
-        </form>
+        </section>
       </div>
     </section>
   );
