@@ -1,10 +1,23 @@
 import { motion } from "framer-motion";
 import { FaWindows } from "react-icons/fa6";
-import { HiCog6Tooth, HiMagnifyingGlass, HiPower } from "react-icons/hi2";
+import {
+  HiArrowPath,
+  HiCog6Tooth,
+  HiMagnifyingGlass,
+  HiMoon,
+  HiPower,
+} from "react-icons/hi2";
 import { useWindows } from "../context/WindowContext.jsx";
+import { useState } from "react";
 
-export default function StartMenu({ onClose }) {
+export default function StartMenu({ onClose, onPowerAction }) {
   const { apps, openWindow } = useWindows();
+  const [powerOpen, setPowerOpen] = useState(false);
+
+  function runPowerAction(action) {
+    onClose();
+    onPowerAction?.(action);
+  }
 
   return (
     <motion.aside
@@ -15,9 +28,45 @@ export default function StartMenu({ onClose }) {
     >
       <div className="flex w-12 flex-col items-center justify-between bg-[#171717] py-3">
         <FaWindows size={18} />
-        <div className="grid gap-4">
-          <HiCog6Tooth size={21} />
-          <HiPower size={21} />
+        <div className="relative grid gap-4">
+          <button
+            className="grid h-8 w-8 place-items-center hover:bg-white/10"
+            aria-label="Abrir configurações"
+            onClick={() => {
+              openWindow("settings");
+              onClose();
+            }}
+          >
+            <HiCog6Tooth size={21} />
+          </button>
+          <button
+            className={`grid h-8 w-8 place-items-center hover:bg-white/10 ${
+              powerOpen ? "bg-white/15" : ""
+            }`}
+            aria-label="Abrir opções de energia"
+            onClick={() => setPowerOpen((value) => !value)}
+          >
+            <HiPower size={21} />
+          </button>
+
+          {powerOpen && (
+            <div className="absolute bottom-0 left-10 w-44 border border-[#3a3a3a] bg-[#242424] py-1 text-sm shadow-[0_12px_34px_rgba(0,0,0,0.45)]">
+              <button
+                className="flex h-9 w-full items-center gap-3 px-3 text-left hover:bg-[#333333]"
+                onClick={() => runPowerAction("shutdown")}
+              >
+                <HiMoon size={18} />
+                Desligar
+              </button>
+              <button
+                className="flex h-9 w-full items-center gap-3 px-3 text-left hover:bg-[#333333]"
+                onClick={() => runPowerAction("restart")}
+              >
+                <HiArrowPath size={18} />
+                Reiniciar
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
