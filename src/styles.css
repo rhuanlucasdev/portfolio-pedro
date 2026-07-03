@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: #005a9e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  overflow: hidden;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+.window-scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.window-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(82, 82, 82, 0.45);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.window-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
