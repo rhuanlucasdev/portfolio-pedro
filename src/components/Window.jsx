@@ -3,7 +3,7 @@ import { motion, useDragControls } from "framer-motion";
 import { HiMinus, HiOutlineSquare2Stack, HiXMark } from "react-icons/hi2";
 import { useWindows } from "../context/WindowContext.jsx";
 
-export default function Window({ windowData }) {
+export default function Window({ windowData, theme = "light" }) {
   const dragControls = useDragControls();
   const [isMobile, setIsMobile] = useState(false);
   const {
@@ -16,6 +16,7 @@ export default function Window({ windowData }) {
 
   const Content = windowData.component;
   const Icon = windowData.icon;
+  const isDark = theme === "dark";
 
   useEffect(() => {
     const media = window.matchMedia("(max-width: 639px)");
@@ -69,14 +70,20 @@ export default function Window({ windowData }) {
       transition={{ duration: 0.18, ease: "easeOut" }}
     >
       <motion.header
-        className="flex items-center justify-between h-8 pl-2 bg-white border-b cursor-grab border-slate-200 active:cursor-grabbing"
+        className={`flex h-8 cursor-grab items-center justify-between border-b pl-2 active:cursor-grabbing ${
+          isDark ? "border-slate-700 bg-[#202020]" : "border-slate-200 bg-white"
+        }`}
         onPointerDown={(event) => {
           if (!windowData.isMaximized && !isMobile) {
             dragControls.start(event);
           }
         }}
       >
-        <div className="flex items-center gap-2 text-xs font-normal text-slate-900">
+        <div
+          className={`flex items-center gap-2 text-xs font-normal ${
+            isDark ? "text-slate-100" : "text-slate-900"
+          }`}
+        >
           <span
             className={`grid h-5 w-5 place-items-center bg-gradient-to-br ${windowData.accent} text-white`}
           >
@@ -87,21 +94,31 @@ export default function Window({ windowData }) {
 
         <div className="flex items-center h-full">
           <button
-            className="grid h-8 w-11 place-items-center text-slate-900 hover:bg-slate-200"
+            className={`grid h-8 w-11 place-items-center ${
+              isDark
+                ? "text-slate-100 hover:bg-white/10"
+                : "text-slate-900 hover:bg-slate-200"
+            }`}
             onClick={() => minimizeWindow(windowData.id)}
             aria-label="Minimizar"
           >
             <HiMinus size={17} />
           </button>
           <button
-            className="grid h-8 w-11 place-items-center text-slate-900 hover:bg-slate-200"
+            className={`grid h-8 w-11 place-items-center ${
+              isDark
+                ? "text-slate-100 hover:bg-white/10"
+                : "text-slate-900 hover:bg-slate-200"
+            }`}
             onClick={() => toggleMaximize(windowData.id)}
             aria-label="Maximizar"
           >
             <HiOutlineSquare2Stack size={16} />
           </button>
           <button
-            className="grid h-8 w-11 place-items-center text-slate-900 hover:bg-[#e81123] hover:text-white"
+            className={`grid h-8 w-11 place-items-center hover:bg-[#e81123] hover:text-white ${
+              isDark ? "text-slate-100" : "text-slate-900"
+            }`}
             onClick={() => closeWindow(windowData.id)}
             aria-label="Fechar"
           >
@@ -111,7 +128,7 @@ export default function Window({ windowData }) {
       </motion.header>
 
       <div className="window-scrollbar h-[calc(100%-2rem)] overflow-auto bg-[#f3f3f3] p-5">
-        <Content />
+        <Content theme={theme} />
       </div>
     </motion.section>
   );

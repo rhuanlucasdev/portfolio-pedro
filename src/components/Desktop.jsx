@@ -19,10 +19,11 @@ const desktopOrder = [
   "settings",
 ];
 
-export default function Desktop() {
+export default function Desktop({ onPowerAction }) {
   const { apps, windows, openWindow, focusWindow } = useWindows();
   const [contextMenu, setContextMenu] = useState(null);
   const [wallpaperVariant, setWallpaperVariant] = useState("default");
+  const [theme, setTheme] = useState("light");
   const [refreshing, setRefreshing] = useState(false);
   const [altTab, setAltTab] = useState({ active: false, index: 0 });
 
@@ -101,6 +102,17 @@ export default function Desktop() {
       );
   }, []);
 
+  useEffect(() => {
+    function handleThemeChange(event) {
+      const nextTheme = event.detail?.theme === "dark" ? "dark" : "light";
+      setTheme(nextTheme);
+    }
+
+    window.addEventListener("portfolio:set-theme", handleThemeChange);
+    return () =>
+      window.removeEventListener("portfolio:set-theme", handleThemeChange);
+  }, []);
+
   function handleContextMenu(event) {
     if (event.target.closest("[data-desktop-context-ignore]")) return;
 
@@ -149,11 +161,11 @@ export default function Desktop() {
         {Object.values(windows)
           .filter((window) => window.isOpen && !window.isMinimized)
           .map((window) => (
-            <Window key={window.id} windowData={window} />
+            <Window key={window.id} windowData={window} theme={theme} />
           ))}
       </AnimatePresence>
 
-      <Taskbar />
+      <Taskbar onPowerAction={onPowerAction} />
 
       <AnimatePresence>
         {altTab.active && openWindows.length > 0 && (

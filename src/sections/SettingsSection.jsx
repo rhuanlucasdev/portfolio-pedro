@@ -1,4 +1,5 @@
 import { HiColorSwatch, HiDesktopComputer, HiMoon, HiSun } from "react-icons/hi";
+import { useEffect, useState } from "react";
 
 const wallpapers = [
   {
@@ -13,10 +14,24 @@ const wallpapers = [
   },
 ];
 
-export default function SettingsSection() {
+export default function SettingsSection({ theme = "light" }) {
+  const [selectedTheme, setSelectedTheme] = useState(theme);
+  const isDark = selectedTheme === "dark";
+
+  useEffect(() => {
+    setSelectedTheme(theme);
+  }, [theme]);
+
   function setWallpaper(variant) {
     window.dispatchEvent(
       new CustomEvent("portfolio:set-wallpaper", { detail: { variant } })
+    );
+  }
+
+  function setSystemTheme(nextTheme) {
+    setSelectedTheme(nextTheme);
+    window.dispatchEvent(
+      new CustomEvent("portfolio:set-theme", { detail: { theme: nextTheme } })
     );
   }
 
@@ -62,11 +77,25 @@ export default function SettingsSection() {
         <div className="mt-6 border border-slate-200 bg-[#f7f7f7] p-4">
           <h3 className="font-semibold">Modo do sistema</h3>
           <div className="mt-3 flex gap-2">
-            <button className="flex items-center gap-2 bg-[#0078d7] px-3 py-2 text-xs font-semibold text-white">
+            <button
+              className={`flex items-center gap-2 px-3 py-2 text-xs font-semibold ${
+                !isDark
+                  ? "bg-[#0078d7] text-white"
+                  : "border border-slate-300 bg-white text-slate-900 hover:bg-slate-100"
+              }`}
+              onClick={() => setSystemTheme("light")}
+            >
               <HiSun size={17} />
               Claro
             </button>
-            <button className="flex items-center gap-2 border border-slate-300 bg-white px-3 py-2 text-xs hover:bg-slate-100">
+            <button
+              className={`flex items-center gap-2 px-3 py-2 text-xs font-semibold ${
+                isDark
+                  ? "bg-[#0078d7] text-white"
+                  : "border border-slate-300 bg-white text-slate-900 hover:bg-slate-100"
+              }`}
+              onClick={() => setSystemTheme("dark")}
+            >
               <HiMoon size={17} />
               Escuro
             </button>
