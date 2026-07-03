@@ -24,6 +24,7 @@ const commandOutput = {
     "  projects    Lista projetos publicados no GitHub",
     "  contact     Mostra canais de contato",
     "  resume      Abre um resumo do currículo",
+    "  credits     Mostra os créditos de desenvolvimento",
     "  open <app>   Abre uma janela (ex: open projects)",
     "  cls/clear   Limpa o terminal",
   ],
@@ -57,6 +58,10 @@ const commandOutput = {
     "Almoxarife na Aptiv desde agosto de 2025.",
     "ADS no Centro Universitário Una: junho/2024 a dezembro/2026.",
     "Abra curriculo.pdf no desktop para ver o preview e baixar o PDF.",
+  ],
+  credits: [
+    "Desenvolvido por Rhuan Lucas",
+    "GitHub: https://github.com/rhuanlucasdev",
   ],
 };
 
